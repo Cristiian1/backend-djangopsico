@@ -1,0 +1,13 @@
+{% extends 'ModuloHC/historiaClinica.html' %}
+
+{% block content %}
+<div class="formulario">
+    <h1>MOTIVO DE CONSULTA</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="{{ form.motivo_consulta.id_for_label }}">Ingrese el motivo de la consulta:</label>
+        {{ form.motivo_consulta }}
+        <button type="submit">Guardar</button>
+    </form>
+</div>
+{% endblock %}

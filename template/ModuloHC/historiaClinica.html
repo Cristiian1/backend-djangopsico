@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Historia psicologica Psicolbienestar</title>
+    <link rel="stylesheet" href="static/css/historiaClinica.css">
+
+   
+</head>
+<body>
+    <header>
+    
+        <nav class="navbar">
+                <a href="{% url 'principal:leerpar' %}" >CRUD </a>
+                <a href="{% url 'pantallainicio' %}" > inicio </a>
+                <a href="{% url 'catalogo' %}" >Categorias </a>
+                <a href="{% url 'registro' %}" >Registrarse </a>
+                <a href="{% url 'historiaClinica' %}" >Iniciar Sesion </a>
+             </nav>
+    
+    </header>
+    
+    <main>
+        <section>
+            {% block content %}
+
+            {% include 'ModuloHC/evolucion.html' %}
+            
+            {% endblock %}
+        </section>
+        
+    </main>
+
+    <footer>
+        <p>Copyright © 2023-2024 PSICOLBIENESTAR 
+            Todos los derechos reservados!</p>
+         <a href="https://www.facebook.com/psicologiaymente/" class="facebook">
+             <i class="fa-brands fa-facebook"></i>
+         </a>
+         <a href="https://www.instagram.com/mundopsicologos/?hl=es" class="instagram">
+             <i class="fa-brands fa-instagram"></i>
+         </a>
+        
+         <a href="https://twitter.com/i/flow/login?redirect_after_login=%2FCOLPSIC" class="twitter">
+             <i class="fa-brands fa-twitter"></i>
+         </a>
+    </footer>
+</body>
+</html>

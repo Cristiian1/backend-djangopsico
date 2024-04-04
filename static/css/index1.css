@@ -1,0 +1,267 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+body {
+    text-align: center;
+    font-family:'Times New Roman', Times, serif;
+}
+
+.head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 63px;
+    background: #008037;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    margin-right: 10px;
+}
+
+.logo img{
+    background-size: cover;
+    background-position: left;
+    height: 100px;
+    width: 100px;
+    animation: rotar 5s linaer infinite;
+  }
+
+  .logo:hover{
+    cursor: pointer;
+  }
+
+     @keyframes rotar{
+       from{
+      transform: rotateY(180deg);
+     }
+     to{
+      transform: rotateY(-180deg);
+   }
+  }
+
+
+.navbar a {
+    display: block;
+    padding: 20px 20px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.navbar a:hover {
+    background: #2308f3;
+}
+
+
+
+
+.title {
+    margin-bottom: 30px;
+    font-size: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+p {
+    margin-bottom: 40px;
+    font-size: 18px;
+    color: #ffffff;
+    padding: 0 100px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 40px;
+    border: 2px solid #008037;
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: none;
+    
+}
+
+.btn-home {
+    display: flex;
+}
+
+.btn-home a {
+    margin: 0 10px;
+}
+.contenido {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.video {
+    padding: 30px;
+    background: white;
+}
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .video-background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  p {
+    margin-bottom: 40px;
+    font-size: 18px;
+    color: #008037;
+    padding: 0 100px;
+  }
+
+  h1 {
+    text-align: center;
+    color: black;
+  }
+  .profesionales {
+    display: grid;
+   
+    grid-gap: 3000px;
+    grid-template-columns: repeat(1, 2fr);
+    
+  }
+  
+ 
+  .profesionales div {
+    border: 5px solid blue;
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .profesionales img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .profesionales div img {
+    width: 100%; 
+    height: auto;
+    transition: transform 0.3s ease; 
+}
+  
+  .profesionales div:hover img {
+    transform: scale(1.1); 
+}
+ 
+  button{
+    background-color: #1560bd;
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 4px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    width: 200%; /*El ancho se adapta al tamaño de pantalla*/
+    max-width: 180px; 
+} 
+button:hover {
+    background: blue;
+
+}
+.main-container {
+  display: flex;
+  grid-area: main;
+  display: grid;
+  grid-template-areas:
+    "a1"
+    "a2"
+    "a3"
+    "a4";
+  grid-template-rows: auto auto auto auto;
+  min-height: 100vh;
+}
+
+.portada {
+  grid-area: a1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 400px;
+
+}
+
+.portada img {
+  height: 400px;
+  width: 700px;
+  animation: slideInOut 8s infinite linear alternate;
+}
+
+
+@keyframes slideInOut {
+  0% {
+    transform: translateX(-80%);
+  }
+
+  20% {
+    transform: translateX(-50%);
+  }
+
+  40% {
+    transform: translateX(-25%);
+
+  }
+
+  60% {
+    transform: translateX(0%);
+
+  }
+
+  80% {
+    transform: translateX(50%);
+
+  }
+
+  100% {
+    transform: translateX(80%);
+  }
+}
+
+footer{
+    text-align: center; 
+    margin-top: 30px; 
+    padding-top: 10px; 
+    color: aliceblue;
+    border-top: 1px solid #ccc; 
+    background-color: #800006;
+    
+    
+}
+footer p{
+    color: #fff;
+    text-align: center;
+    padding: 0%;
+    margin: 0%;
+}
+.fa-brands{
+    display: flex;
+    align-items: center;
+    padding: 40px; color: #fffefc;
+    font-size: 40px;
+}

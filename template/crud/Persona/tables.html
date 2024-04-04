@@ -1,0 +1,303 @@
+{# Cargamos la librería #}
+{% load bootstrap4 %}
+ 
+{# Widget Tweaks #}
+{% load widget_tweaks %}  
+
+{% load static %}
+
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="keywords"content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Matrix lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Matrix admin lite design, Matrix admin lite dashboard bootstrap 5 dashboard template"/>
+    <meta name="description"content="Matrix Admin Lite Free Version is powerful and clean admin dashboard template, inpired from Bootstrap Framework"/>
+    <meta name="robots" content="noindex,nofollow" />
+    <title>Matrix Admin Lite Free Versions Template by WrapPixel</title>
+    <!-- Favicon icon -->
+    <link rel="icon"type="image/png"sizes="16x16"href="/static/assets/images/favicon.png"/>
+    <!-- Custom CSS -->
+    <link rel="stylesheet"type="text/css"href="/static/assets/extra-libs/multicheck/multicheck.css"/>
+    <link href="/static/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css"rel="stylesheet"/>
+    <link href="/static/dist/css/style.min.css" rel="stylesheet" />
+    {% load bootstrap4 %}
+    {% load static %}
+    {% load widget_tweaks %}
+  </head>
+
+  <body>
+   
+    <div class="preloader">
+      <div class="lds-ripple">
+        <div class="lds-pos"></div>
+        <div class="lds-pos"></div>
+      </div>
+    </div>
+    
+    <div
+      id="main-wrapper"
+      data-layout="vertical"
+      data-navbarbg="skin5"
+      data-sidebartype="full"
+      data-sidebar-position="absolute"
+      data-header-position="absolute"
+      data-boxed-layout="full"
+    >
+      <!-- ============================================================== -->
+      <!-- Topbar header - style you can find in pages.scss -->
+      <!-- ============================================================== -->
+      <header class="topbar" data-navbarbg="skin5">
+        {% include "nav.html" %}
+      </header>
+
+      <div class="page-wrapper">
+        <!-- ============================================================== -->
+        <!-- Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <div class="page-breadcrumb">
+          <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+              <h4 class="page-title">Persona</h4>
+              <div class="ms-auto text-end">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                      Library
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container-fluid">
+          {% include "navp.html" %}
+          <div class="row">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title mb-0">Creación de Persona</h5>
+                </div>
+                <div class="card">
+                  <div class="card-body">
+                    <table id="table" >
+                      <thead>
+                          <tr>
+                              {# JS y jQuery Bootstrap #}
+                              {% bootstrap_javascript jquery='full' %}
+                              <div class="card-bodys">
+                                  <form method="post" enctype="multipart/form-data">
+                                      {# Pasamos el 'csrf_token' de seguridad para poder crear un nuevo registro #}
+                                      {% csrf_token %}
+                                      <!-- {{ form.as_p }} -->
+                                      <tr class="espacio">
+                                        <td >
+                                          <div class="col-lg-7">
+                                              <label for="id_persona" >Código de Persona</label>
+                                              {{ form.id_persona}} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto -->
+                                          </div>
+                                      </td>
+                                      <td >
+                                          <div class="col-lg-7" >
+                                              <label for="nombre1" >Nombre1</label>
+                                              {{ form.nombre1 }} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto --> 
+                                          </div>
+                                      </td>
+                                      <td >
+                                        <div class="col-lg-7" >
+                                            <label for="nombre2" >Nombre2</label>
+                                            {{ form.nombre2 }} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto --> 
+                                        </div>
+                                    </td>
+                                      <td>
+                                          <div class="col-lg-7">
+                                              <label for="apellido1" >Apellido 1</label>
+                                              {{ form.apellido1}} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto --> 
+                                          </div>
+                                      </td>
+                                      <td>
+                                        <div class="col-lg-7">
+                                            <label for="apellido2" >Apellido 2</label>
+                                            {{ form.apellido2}} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto --> 
+                                        </div>
+                                    </td>
+                                    <td>
+                                      <div class="col-lg-7">
+                                          <label for="direccion" >Direccion </label>
+                                          {{ form.direccion}} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto --> 
+                                      </div>
+                                  </td>
+                                  <td>
+                                    <div class="col-lg-7">
+                                        <label for="tipo_documento_id_tipo_documento" >Tipo de documento </label>
+                                        {{ form.tipo_documento_id_tipo_documento}} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto --> 
+                                    </div>
+                                </td>
+                                <td>
+                                  <div class="col-lg-7">
+                                      <label for="luagar_nacimiento" >Lugar de nacimiento </label>
+                                      {{ form.luagar_nacimiento}} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto --> 
+                                  </div>
+                              </td>
+                              <td>
+                                <div class="col-lg-7">
+                                    <label for="estado_civil_id_estado_civil" >Id estado civil </label>
+                                    {{ form.estado_civil_id_estado_civil}} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto --> 
+                                </div>
+                            </td>
+                            <td>
+                              <div class="col-lg-7">
+                                  <label for="lugar_residencia" >Lugar de residencia </label>
+                                  {{ form.lugar_residencia}} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto --> 
+                              </div>
+                          </td>
+                                  <td>
+                                    <div class="col-lg-7">
+                                        <label for="telefono" >Telefono</label>
+                                        {{ form.telofono}} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto --> 
+                                    </div>
+                                </td>
+                                <td>
+                                  <div class="col-lg-7">
+                                      <label for="cedula" >Cedula</label>
+                                      {{ form.cedula}} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto --> 
+                                  </div>
+                              </td>
+                              <td>
+                                <div class="col-lg-7">
+                                    <label for="eps" >Eps</label>
+                                    {{ form.eps}} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto --> 
+                                </div>
+                            </td>
+                            <td>
+                              <div class="col-lg-7">
+                                  <label for="ciudad" >correo</label>
+                                  {{ form.correo}} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto --> 
+                              </div>
+                          </td>
+                          <td>
+                            <div class="col-lg-7">
+                                <label for="nombre_responsable" >Nombre del responsable</label>
+                                {{ form.nombre_responsable}} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto --> 
+                            </div>
+                        </td>
+                        <div class="col-lg-7">
+                          <label for="imagen" >Imagen</label>
+                          {{ form.imagen}} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto --> 
+                        </div>
+                        </td>
+                                      
+                                      </tr>
+                                      <div>
+                                          <button type="submit" class="btn btn-primary">Aceptar</button>
+                                          <a href="./" type="submit" class="btn btn-primary">Cancelar</a>
+                                      </div>
+                                      &nbsp;
+                                      &nbsp;
+                                      &nbsp;
+                                  </form>
+                              </div>
+                          </tr>
+                      </thead>
+                    </table>
+                  </div>
+                </div>
+              </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Lista de Persona</h5>
+                  <div class="table-responsive">
+                    <table id="zero_config" class="table table-striped table-bordered">
+                      <thead>
+                        <tr>
+                          <th>Id de Persona</th>
+                          <th>Nombre1</th>
+                          <th>Nombre2</th>
+                          <th>Apellido1</th>
+                          <th>Apellido2</th>
+                          <th>cedula</th>
+                          <th>Id tipo de documento</th>
+                          <th>Telefono</th>
+                          <th>Id Estado civil</th>
+                          <th>Lugar de nacimiento</th>
+                          <th>Lugar de residencia</th>
+                          <th>Direccion</th>
+                          <th>nombre del responsable</th>
+                          <th>eps</th>
+                          <th>Correo</th>
+                          <th>imagen</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% for Persona in object_list %}
+                          <tr>
+                            <td>{{ Persona.id_persona }}</td>
+                            <td>{{ Persona.nombre1 }}</td>
+                            <td>{{ Persona.nombre2 }}</td>
+                            <td>{{ Persona.apellido1 }}</td>
+                            <td>{{ Persona.apellido2 }}</td>
+                            <td>{{ Persona.cedula }}</td>
+                            <td>{{ Persona.tipo_documento_id_tipo_documento }}</td>
+                            <td>{{ Persona.telefono }}</td>
+                            <td>{{ Persona.estado_civil_id_estado_civil }}</td>
+                            <td>{{ Persona.luagar_nacimiento }}</td>
+                            <td>{{ Persona.lugar_residencia }}</td>
+                            <td>{{ Persona.direccion }}</td>
+                            <td>{{ Persona.nombre_responsable }}</td>
+                            <td>{{ Persona.eps }}</td>
+                            <td>{{ Persona.correo }}</td>
+                            <td>{{ Persona.imagen }}</td>
+                            <td>
+                              <form method="POST" action="eliminar/{{Persona.id_persona}}">
+                                  {% csrf_token %}
+                                  <div class="btn-group">
+
+                                      <!-- Creamos 3 botones que son ver, Editar y Eliminar, nos sirven para gestionar nuestros registros o postres -->
+                                      <a href="detalle/{{Persona.id_persona}}" title="Ver" type="button" class="btn btn-success">Ver </a>
+                                      <a href="editar/{{Persona.id_persona}}" title="Editar" type="button" class="btn btn-primary">Editar </a>
+                                      <button class="btn btn-danger" onclick="return eliminar();" type="submit">
+                                        Eliminar
+                                      </button>
+                                  </div>
+                              </form>
+                          </td>
+                          </tr>
+                        {% endfor %}
+                      </tbody>
+                      <script>
+                        /****************************************
+                         *       Basic Table                   *
+                         ****************************************/
+                        $("#zero_config").DataTable();
+                      </script>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/static/assets/libs/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="/static/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="/static/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="/static/assets/extra-libs/sparkline/sparkline.js"></script>
+    <!--Wave Effects -->
+    <script src="/static/dist/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="/static/dist/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="/static/dist/js/custom.min.js"></script>
+    <!-- this page js -->
+    <script src="/static/assets/extra-libs/DataTables/datatables.min.js"></script>
+  </body>
+</html>

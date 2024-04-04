@@ -1,0 +1,280 @@
+{# Cargamos la librería #}
+{% load bootstrap4 %}
+ 
+{# CSS Bootstrap #}
+{% bootstrap_css %} 
+
+{# Widget Tweaks #}
+{% load widget_tweaks %}  
+
+{% load static %}
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="keywords"content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Matrix lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Matrix admin lite design, Matrix admin lite dashboard bootstrap 5 dashboard template"/>
+    <meta name="description"content="Matrix Admin Lite Free Version is powerful and clean admin dashboard template, inpired from Bootstrap Framework"/>
+    <meta name="robots" content="noindex,nofollow" />
+    <title>Matrix Admin Lite Free Versions Template by WrapPixel</title>
+    <!-- Favicon icon -->
+    <link rel="icon"type="image/png"sizes="16x16"href="/static/assets/images/favicon.png"/>
+    <!-- Custom CSS -->
+    <link rel="stylesheet"type="text/css"href="/static/assets/extra-libs/multicheck/multicheck.css"/>
+    <link href="/static/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css"rel="stylesheet"/>
+    <link href="/static/dist/css/style.min.css" rel="stylesheet" />
+    {% load bootstrap4 %}
+    {% load static %}
+    {% load widget_tweaks %}
+  </head>
+
+  <body>
+   
+    <div class="preloader">
+      <div class="lds-ripple">
+        <div class="lds-pos"></div>
+        <div class="lds-pos"></div>
+      </div>
+    </div>
+    
+    <div
+      id="main-wrapper"
+      data-layout="vertical"
+      data-navbarbg="skin5"
+      data-sidebartype="full"
+      data-sidebar-position="absolute"
+      data-header-position="absolute"
+      data-boxed-layout="full"
+    >
+      <!-- ============================================================== -->
+      <!-- Topbar header - style you can find in pages.scss -->
+      <!-- ============================================================== -->
+      <header class="topbar" data-navbarbg="skin5">
+        {% include "nav.html" %}
+      </header>
+
+      <div class="page-wrapper">
+        <!-- ============================================================== -->
+        <!-- Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <div class="page-breadcrumb">
+          <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+              <h4 class="page-title">Actualización de datos</h4>
+              <div class="ms-auto text-end">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                      Library
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="container-fluid">
+          <!-- ============================================================== -->
+          <!-- Start Page Content -->
+          <!-- ============================================================== -->
+          <div class="row">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title mb-0">Actualización de centro</h5>
+                </div>
+                <div class="card">
+                  <div class="card-body">
+                    <table id="table" >
+                      <thead>
+                          <tr>
+                              {# JS y jQuery Bootstrap #}
+                              {% bootstrap_javascript jquery='full' %}
+
+                              <div class="card-bodys">
+
+                                <form method="post" enctype="multipart/form-data">
+                  
+                                  {# Pasamos el 'csrf_token' de seguridad para poder crear un nuevo registro #}
+                                  {% csrf_token %}
+                                  
+                                  <!-- {{ form.as_p }} -->
+                                  <tr class="espacio">
+                                      <td >
+                                          <div class="col-lg-7">
+                                              <label for="id_evolucion" >Id  de Evolucion</label>
+                                              {{ form.id_evolucion}} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto -->
+                                          </div>
+                                      </td>
+                                      <td >
+                                          <div class="col-lg-7" >
+                                              <label for="tipo_historia" >Tipo historia</label>
+                                              {{ form.tipo_historia }} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto --> 
+                                          </div>
+                                      </td>
+                                      <td >
+                                        <div class="col-lg-7" >
+                                            <label for="descripcion" >Descripcion</label>
+                                            {{ form.descripcion }} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto --> 
+                                        </div>
+                                      </td>
+                                      <td >
+                                        <div class="col-lg-7" >
+                                            <label for="id_motivo_consulta" >Codigo de Motivo de consulta</label>
+                                            {{ form.id_motivo_consulta }} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto --> 
+                                        </div>
+                                      </td>
+                                      <td >
+                                        <div class="col-lg-7" >
+                                            <label for="diagnostico_id_diagnostico" >Id diagnostico</label>
+                                            {{ form.diagnostico_id_diagnostico }} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto --> 
+                                        </div>
+                                        </td>
+                                        <td >
+                                        <div class="col-lg-7" >
+                                          <label for="antecedentes_psiquiatricos" >Antecedentes psiquiatricos</label>
+                                          {{ form.antecedentes_psiquiatricos }} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto --> 
+                                        </div>
+                                        </td>
+                                        <td >
+                                        <div class="col-lg-7" >
+                                          <label for="recomendaciones_id_recomendaciones" >Id recomendaciones</label>
+                                          {{ form.recomendaciones_id_recomendaciones }} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto --> 
+                                        </div>
+                                        </td>
+                                        <td >
+                                        <div class="col-lg-7" >
+                                          <label for="factores_riesgo_id_factores_riesgo" >Id factores riesgo</label>
+                                          {{ form.factores_riesgo_id_factores_riesgo }} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto --> 
+                                        </div>
+                                        </td>
+                                        <td >
+                                        <td >
+                                            <div class="col-lg-7" >
+                                              <label for="tratamiento_id_tratamiento" >Id de tratamiento</label>
+                                              {{ form.tratamiento_id_tratamiento }} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto --> 
+                                            </div>
+                                        </td>
+                                        <td>
+                                        <div class="col-lg-7" >
+                                          <label for="historia_vida_id_historia_vida" >Id historia vida</label>
+                                          {{ form.historia_vida_id_historia_vida }} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto --> 
+                                        </div>
+                                        </td>
+                                        <td>
+                                          <div class="col-lg-7" >
+                                            <label for="id_anteceden_psico_perso" >Id antecedentes psicologicos personales</label>
+                                            {{ form.id_anteceden_psico_perso }} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto --> 
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div class="col-lg-7" >
+                                            <label for="examen_mental_id_examen_mental" >Id examen mental</label>
+                                            {{ form.examen_mental_id_examen_mental }} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto --> 
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div class="col-lg-7" >
+                                            <label for="tipo_familia_id_tipo_familia" >Id Tipo de familia</label>
+                                            {{ form.tipo_familia_id_tipo_familia }} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto --> 
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div class="col-lg-7" >
+                                            <label for="relacion_familiar_id_relacion_familiara" >Id Relacion Familiar </label>
+                                            {{ form.relacion_familiar_id_relacion_familiar }} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto --> 
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div class="col-lg-7" >
+                                            <label for="factores_protectores_id_factores_protectores" >Id factores protectores  </label>
+                                            {{ form.factores_protectores_id_factores_protectores }} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto --> 
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div class="col-lg-7" >
+                                            <label for=" ambiente_laboral_id_ambiente_labora" >Id Ambiente laboral </label>
+                                            {{ form.ambiente_laboral_id_ambiente_labora }} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto --> 
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div class="col-lg-7" >
+                                            <label for=" antecedentes_medicos_id_antecedentes_medicos" >Id antecedentes medicos </label>
+                                            {{ form.antecedentes_medicos_id_antecedentes_medicos }} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto --> 
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div class="col-lg-7" >
+                                            <label for=" mbiente_social_id_ambiente_social" >Id ambiente social </label>
+                                            {{ form.ambiente_social_id_ambiente_social }} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto --> 
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div class="col-lg-7" >
+                                            <label for=" remision_id_remision" >Id remision </label>
+                                            {{ form.remision_id_remision }} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto --> 
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div class="col-lg-7" >
+                                            <label for=" desarrollo_sesion_id_desarrollo_sesion" >Id Desarrollo de la sesion </label>
+                                            {{ form.desarrollo_sesion_id_desarrollo_sesion }} <!-- Usamos la librería 'widget_tweaks' para crear esta caja de texto --> 
+                                          </div>
+                                        </td>
+                                          
+                                       
+                                    
+                                 
+                                  </tr>
+                                  <div>
+                                      <button type="submit" class="btn btn-primary">Aceptar</button> 
+                                      <a href="../" type="submit" class="btn btn-primary">Cancelar</a>
+                                  </div> 
+                                  &nbsp;
+                                  &nbsp;
+                                  &nbsp;
+                               
+                              </form>
+                               
+                              </div>
+                          </tr>
+                      </thead>
+                    </table>  
+                  </div>
+                </div>
+              </div>
+
+        </div>              
+       
+      </div>
+      
+    </div>
+    
+    <script src="/static/assets/libs/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="/static/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="/static/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="/static/assets/extra-libs/sparkline/sparkline.js"></script>
+    <!--Wave Effects -->
+    <script src="/static/dist/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="/static/dist/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="/static/dist/js/custom.min.js"></script>
+    <!-- this page js -->
+    <script src="/static/assets/extra-libs/DataTables/datatables.min.js"></script>
+    
+    
+    <script>
+      /****************************************
+       *       Basic Table                   *
+       ****************************************/
+      $("#zero_config").DataTable();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/static/css/base.css">
+</head>
+
+<body>
+
+    <form class="my-form" action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" class="my-submit-button" name="submit">
+        <a href="{% url 'pantallainicio' %}">  <button class="boton">Enviar</button> </a>
+    </form>
+    
+
+</body>
+</html>
+
+
+   

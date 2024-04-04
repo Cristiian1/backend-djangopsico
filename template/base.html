@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="/static/css/base.css">
+</head>
+<body>
+    {% block content %}
+    <form action="" method="POST">
+        {% csrf_token %} 
+        <input type="hidden" name="csrfmiddlewaretoken" value="gxpMJBNFrdDSqbO8RZe7Herl7s56TBqJZKJk7XjRKxic9jQrWX5zh2l60ZnFUL0u">
+        <p>
+    <label for="id_username">Usuario:</label>
+    <input type="text" name="username" maxlength="150" autofocus required id="id_username">
+    
+  </p> 
+  <p>
+    <label for="id_email">Email:</label>
+    <input type="email" name="email" maxlength="320" required id="id_email"> 
+  </p>
+  <p>
+    <label for="id_first_name">Nombres:</label>
+    <input type="text" name="first_name" maxlength="140" required id="id_first_name">
+  </p>
+  <p>
+    <label for="id_last_name">Apellidos:</label>
+    <input type="text" name="last_name"  maxlength="140" id="id_last_name">
+  </p>
+  <p>
+    <label for="id_password1">contraseña:</label>
+    <input type="password" name="password1" autocomplete="new-password" required id="id_password1">
+    
+  </p>
+  <p>
+    <label for="id_password2">Confrima la contraseña:</label>
+    <input type="password" name="password2" autocomplete="new-password" required id="id_password2">
+  </p>
+        <input type="submit" name="submit" >
+    </form> 
+    {% endblock content %}
+</body>
+</html>
